@@ -217,8 +217,8 @@ body {
     cursor: pointer;
 }
 
-.modal {
-    display: none; /* Изначально скрываем модалку */
+#skipModal {
+    display: none; 
     position: fixed;
     top: 0;
     left: 0;
@@ -228,37 +228,39 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 100;
-}
 
-.modal-content {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-
-    p {
-        color: #1C1C1E;
+    .modal-content {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
         text-align: center;
-        font-size: 17px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 22px; 
+    
+        p {
+            color: #1C1C1E;
+            text-align: center;
+            font-size: 17px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 22px; 
+        }
+    }
+    
+    .modal-button {
+        margin: 10px;
+        padding: 10px 20px;
+        border: none;
+        background-color: #6200EE;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    .modal-button:hover {
+        background-color: #4b00c7;
     }
 }
 
-.modal-button {
-    margin: 10px;
-    padding: 10px 20px;
-    border: none;
-    background-color: #6200EE;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-}
 
-.modal-button:hover {
-    background-color: #4b00c7;
-}
 
 // --------------------------------------------------------------------------
 
@@ -785,7 +787,7 @@ body {
 }
 
 // Модальное окно Terms and privacy
-.modal {
+.modal.terms {
     display: flex; 
     position: fixed; 
     z-index: 1000; 
@@ -801,7 +803,7 @@ body {
         background: #fff;
     }
 
-    &__content {
+    .modal__content {
         background-color: white; 
         padding: 16px;
         // border-radius: 5px; 
@@ -818,7 +820,7 @@ body {
         }
     }
 
-    &__header {
+   .modal__header {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -868,7 +870,7 @@ body {
         }
     }
 
-    &__title {
+    .modal__title {
         color:#1C1C1E;
         font-size: 24px;
         font-style: normal;
@@ -877,7 +879,7 @@ body {
         margin-bottom: 10px;
     }
 
-    &__main {
+    .modal__main {
         display: flex;
         flex-direction: column;
         gap: 30px;
@@ -927,7 +929,6 @@ body {
 }
 
 
-.modal
 
 .modal__close {
     border: none; 
@@ -936,6 +937,6 @@ body {
 }
 
 
-.modal--hidden {
+.modal.terms.modal--hidden {
     display: none;
 }
