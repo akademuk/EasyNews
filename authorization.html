@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authorization</title>
+
+
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="style/fonts.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body class="authorization-page">
+    <div class="authorization-page__box">
+        <div class="authorization-page__header">
+            <img src="img/Logo.svg" alt="FinMind" class="authorization-page__logo">
+        </div>
+    
+        <div class="auth-box">
+            <div class="auth-box__container">
+                <div class="auth-box__toggle">
+                    <button id="login-btn" class="auth-box__toggle-btn auth-box__toggle-btn--active">Login</button>
+                    <button id="signup-btn" class="auth-box__toggle-btn">Signup</button>
+                </div>
+                <form class="auth-box__form auth-box__form--active" id="login-form">
+                    <div class="auth-box__input-container">
+                        <input type="text" id="login-email" class="auth-box__input" placeholder="Email">
+                        <span class="auth-box__clear-btn" id="clear-email">
+                            <img src="img/clear.svg" alt="clear icon">
+                        </span>
+                    </div>
+                    <div class="auth-box__input-container">
+                        <input type="password" id="login-password" class="auth-box__input" placeholder="Password">
+                        <span class="auth-box__toggle-password" id="toggle-password"></span>
+                    </div>
+                    <p id="forgot-password" class="auth-box__forgot-link">Forgot password?</p>
+                    <button id="login-submit" class="auth-box__submit-btn">Login</button>
+                </form>
+                <form class="auth-box__form" id="signup-form">
+                    <div class="auth-box__input-container">
+                        <input type="text" id="signup-email" class="auth-box__input" placeholder="Email">
+                        <span class="auth-box__clear-btn" id="clear-signup-email">
+                            <img src="img/clear.svg" alt="clear icon">
+                        </span>
+                    </div>
+                    
+                    <div class="auth-box__input-container">
+                        <select id="signup-age" class="auth-box__input">
+                            <option value="" disabled selected>Age</option>
+                            <option value="18-24">18-24</option>
+                            <option value="25-34">25-34</option>
+                            <option value="35-44">35-44</option>
+                            <option value="> 45">> 45</option>
+                        </select>
+                    </div>
+                
+                    <div class="auth-box__input-container">
+                        <select id="signup-gender" class="auth-box__input">
+                            <option value="" disabled selected>Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                            <option value="prefer">Prefer not to say</option>
+                        </select>
+                    </div>
+                    
+                    <div class="auth-box__input-container">
+                        <input type="password" id="signup-password" class="auth-box__input" placeholder="Password">
+                        <span class="auth-box__toggle-password" id="toggle-signup-password"></span>
+                    </div>
+                
+                    <p class="auth-box__password-hint">
+                        Make your password even stronger by including more than 10 characters, numbers, symbols, upper and lowercase letter.
+                    </p>
+                
+                    <div class="auth-box__checkbox-container">
+                        <input type="checkbox" id="signup-agree" class="auth-box__checkbox">
+                        <label for="signup-agree">By signup, you agree to the  <button class="terms-button">Privacy policy</button></label>
+                    </div>
+                
+                    <button id="signup-submit" class="auth-box__submit-btn">Sign Up</button>
+                </form>
+                <div class="auth-box__invalid">
+                    <img src="img/Invalid.svg" alt="Invalid icon">
+                    <p>Invalid email or password</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="auth-box__form" id="forgot-form">
+        
+        <div class="auth-box__form-main">
+            <div class="auth-box__form-header">
+                <button id="back-to-login" class="auth-box__back-btn">
+                    <img src="img/back-arrow.svg" alt="back arrow">
+                </button>
+                <p>Restore password</p>
+                <span></span>
+            </div>
+        
+            <p class="auth-box__forgot-text">Enter the email provided upon registration - we will send you a password recovery link.</p>
+            
+            <div class="auth-box__input-container">
+                <input type="text" id="forgot-email" class="auth-box__input" placeholder="Email">
+            </div>
+            
+            <div class="auth-box__invalid invalid">
+                <img src="img/Invalid.svg" alt="Invalid icon">
+                <p>Invalid email or password</p>
+            </div>
+            
+            <div class="auth-box__invalid valid">
+                <img src="img/valid.svg" alt="valid icon">
+                <p>Email sent</p>
+            </div>
+    
+            <button id="reset-password" class="auth-box__submit-btn">Send an Email</button>
+        </div>
+    
+        <div class="auth-box__new-password-container hidden">
+            <div class="auth-box__form-header">
+                <button id="back-to-email" class="auth-box__back-btn">
+                    <img src="img/back-arrow.svg" alt="back arrow">
+                </button>
+                <p>New password</p>
+                <span></span>
+            </div>
+            <div class="auth-box__input-container">
+                <input type="password" id="new-password" class="auth-box__input" placeholder="New Password">
+            </div>
+            <div class="auth-box__input-container">
+                <input type="password" id="confirm-password" class="auth-box__input" placeholder="Confirm New Password">
+            </div>
+            <p class="auth-box__new-password-text">Make your password even stronger by including more than 10 characters, numbers, symbols, upper and lowercase letter.</p>
+            <div class="auth-box__invalid invalid">
+                <img src="img/Invalid.svg" alt="Invalid icon">
+                <p>Passwords do not match</p>
+            </div>
+            <div class="auth-box__invalid valid">
+                <img src="img/valid.svg" alt="valid icon">
+                <p>Password reset successfully</p>
+            </div>
+            <button id="save" class="auth-box__submit-btn">Save</button>
+        </div>
+    </div>
+    
+    <footer class="onboarding-footer">
+        <p>Disclaimer: This content is for educational purposes only and does not constitute financial advice. Please
+            consult a professional for financial decision-making.</p>
+
+            <div class="onboarding-footer__box">
+                <p>© 2024 FINMIND OÜ. All rights reserved.</p>
+                <nav class="social-links">
+                    <a href="#linkedin">LinkedIn</a>
+                    <a href="#instagram">Instagram</a>
+                    <a href="#facebook">Facebook</a>
+                    <button class="terms-button">Terms and privacy</button>
+                </nav>
+            </div>
+    </footer>
+
+
+    <!-- Модальное окно с классом terms -->
+    <div class="modal terms modal--hidden">
+        <ul class="modal__header-link">
+            <li><a href="#Privacy">Privacy</a></li>
+            <li><a href="#Term">Term of use</a></li>
+        </ul>
+        <div class="modal__content">
+            <div class="modal__header">
+                <button class="modal__close"><img src="img/back-arrow.svg" alt="back arrow"></button>
+                <p>Privacy and Term of use</p>
+                <div class="modal__header-box"></div>
+            </div>
+            <div class="modal__main">
+                <div class="modal__main-text">
+                    <h2 class="modal__title" id="Privacy">Privacy Policy</h2>
+                    <span>Effective Date: 01.09.2024</span>
+                </div>
+                <div class="modal__main-text">
+                    <h3>1. Introduction</h3>
+                    <p>Welcome to FinMind Educational Application! We value your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, store, and safeguard your information. Please read this document carefully to understand how we handle your data.</p>
+                </div>
+                <div class="modal__main-text">
+                    <h3>2. Information We Collect</h3>
+                    <p>We collect and process the following types of information:</p>
+                    <ul>
+                        <li>Personal Information: Name, email address, phone number, and other contact details you provide during registration.</li>
+                        <li>Financial Information: Data about your income, expenses, investments, and other financial activities you enter into the app.</li>
+                        <li>Technical Information: IP address, browser type, operating system, device information, and usage data (e.g., access times, pages viewed, and actions taken within the app).</li>
+                    </ul>
+                </div>
+                <div class="modal__main-text">
+                    <h3>3. How We Use Your Information</h3>
+                    <p>We use the collected information for the following purposes:</p>
+                    <ul>
+                        <li>To Provide Services: To process and manage your financial data in order to offer personalized financial recommendations and analysis.</li>
+                        <li>To Improve the App: To analyze app usage and improve its functionality and user experience.</li>
+                        <li>To Communicate with You: To contact you regarding support, updates, and marketing offers (with your consent).</li>
+                    </ul>
+                </div>
+                <div class="modal__main-text">
+                    <h3>4. Information Sharing</h3>
+                    <p>We do not sell or share your personal information with third parties except in the following cases:</p>
+                    <ul>
+                        <li>Service Providers: We may share information with our service providers who assist us in operating the app, provided they are bound by confidentiality obligations.</li>
+                        <li>Legal Requirements: We may disclose your information in response to legal requests or to comply with the law, protect rights, and ensure safety.</li>
+                    </ul>
+                </div>
+                <div class="modal__main-text">
+                    <h3>5. Data Security</h3>
+                    <p>We take reasonable measures to protect your information from unauthorized access, loss, alteration, and disclosure. However, no method of data transmission over the internet or electronic storage is completely secure.</p>
+                </div>
+                <div class="modal__main-text">
+                    <h3>6. Your Rights</h3>
+                    <p>You have the following rights regarding your personal information:</p>
+                    <ul>
+                        <li>Access: The right to know what data we hold about you.</li>
+                        <li>Correction: The right to correct inaccurate or incomplete data.</li>
+                        <li>Deletion: The right to request deletion of your personal information if it is no longer needed for the purposes for which it was collected.</li>
+                    </ul>
+                    <p>To exercise these rights, please contact us using the details provided below.</p>
+                </div>
+                <div class="modal__main-text">
+                    <h3>7. Changes to the Privacy Policy</h3>
+                    <p>We may update this Privacy Policy from time to time. We will notify you of significant changes by posting the updated Policy on our website and in the app. We encourage you to review this page periodically for any changes.</p>
+                    <p>8. Contact Information</p>
+                    <p>If you have any questions or concerns about this Privacy Policy, please contact us at:</p>
+                    <ul>
+                        <li>Email: team.finmind@gmail.com</li>
+                        <li>Address: Sinilille tee 2/4-1, Peetri alevik, Rae vald 75312, Estonia</li>
+                    </ul>
+                </div>
+
+                <div class="modal__main-text" id="Term">
+                    <h2 class="modal__title">Terms of Use</h2>
+                    <span>Effective Date: 01.09.2024</span>
+                </div>
+                <div class="modal__main-text">
+                    <h3>1. Introduction</h3>
+                    <p>Welcome to FinMind Educational Application! We value your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, store, and safeguard your information. Please read this document carefully to understand how we handle your data.</p>
+                </div>
+                <div class="modal__main-text">
+                    <h3>2. Information We Collect</h3>
+                    <p>We collect and process the following types of information:</p>
+                    <ul>
+                        <li>Personal Information: Name, email address, phone number, and other contact details you provide during registration.</li>
+                        <li>Financial Information: Data about your income, expenses, investments, and other financial activities you enter into the app.</li>
+                        <li>Technical Information: IP address, browser type, operating system, device information, and usage data (e.g., access times, pages viewed, and actions taken within the app).</li>
+                    </ul>
+                </div>
+                <div class="modal__main-text">
+                    <h3>3. How We Use Your Information</h3>
+                    <p>We use the collected information for the following purposes:</p>
+                    <ul>
+                        <li>To Provide Services: To process and manage your financial data in order to offer personalized financial recommendations and analysis.</li>
+                        <li>To Improve the App: To analyze app usage and improve its functionality and user experience.</li>
+                        <li>To Communicate with You: To contact you regarding support, updates, and marketing offers (with your consent).</li>
+                    </ul>
+                </div>
+                <div class="modal__main-text">
+                    <h3>4. Information Sharing</h3>
+                    <p>We do not sell or share your personal information with third parties except in the following cases:</p>
+                    <ul>
+                        <li>Service Providers: We may share information with our service providers who assist us in operating the app, provided they are bound by confidentiality obligations.</li>
+                        <li>Legal Requirements: We may disclose your information in response to legal requests or to comply with the law, protect rights, and ensure safety.</li>
+                    </ul>
+                </div>
+                <div class="modal__main-text">
+                    <h3>5. Data Security</h3>
+                    <p>We take reasonable measures to protect your information from unauthorized access, loss, alteration, and disclosure. However, no method of data transmission over the internet or electronic storage is completely secure.</p>
+                </div>
+                <div class="modal__main-text">
+                    <h3>6. Your Rights</h3>
+                    <p>You have the following rights regarding your personal information:</p>
+                    <ul>
+                        <li>Access: The right to know what data we hold about you.</li>
+                        <li>Correction: The right to correct inaccurate or incomplete data.</li>
+                        <li>Deletion: The right to request deletion of your personal information if it is no longer needed for the purposes for which it was collected.</li>
+                    </ul>
+                    <p>To exercise these rights, please contact us using the details provided below.</p>
+                </div>
+                <div class="modal__main-text">
+                    <h3>7. Changes to the Privacy Policy</h3>
+                    <p>We may update this Privacy Policy from time to time. We will notify you of significant changes by posting the updated Policy on our website and in the app. We encourage you to review this page periodically for any changes.</p>
+                    <p>8. Contact Information</p>
+                    <p>If you have any questions or concerns about this Privacy Policy, please contact us at:</p>
+                    <ul>
+                        <li>Email: team.finmind@gmail.com</li>
+                        <li>Address: Sinilille tee 2/4-1, Peetri alevik, Rae vald 75312, Estonia</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script/jquery-3.7.0.min.js"></script>
+    <script src="script/swiper-bundle.min.js"></script>
+    <script src="script/jquery.fancybox.min.js"></script>
+    <script src="script/script.js"></script>
+</body>
+
+</html>

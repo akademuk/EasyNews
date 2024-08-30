@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="style/fonts.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body class="onboarding-page">
+
+    <!-- Модальное окно -->
+    <div id="skipModal" class="modal">
+        <div class="modal-content">
+            <p>Are you sure you want to skip onboarding?</p>
+            <button id="modalOk" class="modal-button">OK</button>
+            <button id="modalCancel" class="modal-button">Cancel</button>
+        </div>
+    </div>
+
+    <header class="onboarding-header">
+        <button class="onboarding-header_skip">Skip</button>
+    </header>
+
+    <main class="onboarding-main">
+        <div class="onboardin__slider swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="onboardin__slider-box">
+                        <picture>
+                            <source srcset="img/Onboarding-img1.webp" type="image/webp">
+                            <img width="346" height="328" src="img/Onboarding-img1.png" alt="Onboarding image" loading="lazy">
+                        </picture>
+                        <div class="onboardin__slider-content">
+                            <h3>Welcome to <span>FinMind!</span></h3>
+                            <p>Your guide in the world of financial literacy.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="onboardin__slider-box">
+                        <picture>
+                            <source srcset="img/Onboarding-img2.webp" type="image/webp">
+                            <img width="346" height="328" src="img/Onboarding-img2.png" alt="Onboarding image" loading="lazy">
+                        </picture>
+                        <div class="onboardin__slider-content">
+                            <h3>Free education</h3>
+                            <p>Financial literacy for everyone — free and accessible. Learn with us and become financially independent.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="onboardin__slider-box">
+                        <picture>
+                            <source srcset="img/Onboarding-img3.webp" type="image/webp">
+                            <img width="346" height="328" src="img/Onboarding-img3.png" alt="Onboarding image" loading="lazy">
+                        </picture>
+                        <div class="onboardin__slider-content">
+                            <h3>Quick term explanations</h3>
+                            <p>Explaining terms has never been this convenient. Click on a term and see the explanation immediately.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="onboardin__slider-box">
+                        <picture>
+                            <source srcset="img/Onboarding-img4.webp" type="image/webp">
+                            <img width="346" height="328" src="img/Onboarding-img4.png" alt="Onboarding image" loading="lazy">
+                        </picture>
+                        <div class="onboardin__slider-content">
+                            <h3>Interactive learning</h3>
+                            <p>Test your knowledge with quizzes. Learn in an engaging and effective way.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="onboardin__slider-box">
+                        <picture>
+                            <source srcset="img/Onboarding-img5.webp" type="image/webp">
+                            <img width="346" height="328" src="img/Onboarding-img5.png" alt="Onboarding image" loading="lazy">
+                        </picture>
+                        <div class="onboardin__slider-content">
+                            <h3><span>Time to start!</span></h3>
+                            <p>The FinMind team supports you on this challenging journey.</p>
+                       </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="onboardin__nav">
+                <!-- If we need pagination -->
+                <div class="onboardin-pagination"></div>
+                <div class="onboardin-button-next">Continue</div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="onboarding-footer">
+        <p>Disclaimer: This content is for educational purposes only and does not constitute financial advice. Please
+            consult a professional for financial decision-making.</p>
+
+            <div class="onboarding-footer__box">
+                <p>© 2024 FINMIND OÜ. All rights reserved.</p>
+                <nav class="social-links">
+                    <a href="#linkedin">LinkedIn</a>
+                    <a href="#instagram">Instagram</a>
+                    <a href="#facebook">Facebook</a>
+                    <a href="#terms">Terms and privacy</a>
+                </nav>
+            </div>
+    </footer>
+
+
+    <script src="script/jquery-3.7.0.min.js"></script>
+    <script src="script/swiper-bundle.min.js"></script>
+    <script src="script/jquery.fancybox.min.js"></script>
+    <script src="script/script.js"></script>
+</body>
+
+</html>
